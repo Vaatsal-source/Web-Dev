@@ -1,0 +1,130 @@
+:root {
+  --text-primary: #1a1a1a;
+  --text-secondary: #444444;
+  --glass-bg: rgba(255, 255, 255, 0.85); 
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-image: url('https://hips.hearstapps.com/hmg-prod/images/alpe-di-siusi-sunrise-with-sassolungo-or-langkofel-royalty-free-image-1623254127.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; 
+  min-height: 100vh;
+}
+.App {
+  max-width: 900px;
+  margin: 80px auto; 
+  padding: 40px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+.crumbs {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.8); 
+  backdrop-filter: blur(5px);
+  z-index: 1000;
+}
+
+.crumbs ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 0;
+  padding: 15px 0;
+}
+.crumbs .btn {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: opacity 0.3s;
+  position: relative;
+  transition: all 0.3s ease;
+}
+.crumbs .btn::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background: linear-gradient(135deg, #6e8efb, #a777e3);
+  transition: width 0.3s;
+}
+.crumbs .btn:hover {
+  opacity: 0.7;
+}
+.crumbs .btn:hover::after {
+  width: 100%;
+}
+button#btn, 
+#form-container button {
+  background: linear-gradient(135deg, #6e8efb, #a777e3); 
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 50px; 
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(110, 142, 251, 0.4);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+button#btn:hover, 
+#form-container button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(110, 142, 251, 0.6);
+}
+#form-container {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #ddd;
+}
+input {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin: 10px 5px;
+  width: calc(33% - 20px);
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 30px 0;
+  background: rgba(255, 255, 255, 0.5);
+}
+th, td {
+  padding: 15px;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  text-align: left;
+}
+@keyframes fadeInRow {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.fade-in-row {
+  opacity: 0; 
+  animation: fadeInRow 0.5s ease forwards;
+}
+.fade-in-row:nth-child(1) { animation-delay: 0.1s; }
+.fade-in-row:nth-child(2) { animation-delay: 0.2s; }
+.fade-in-row:nth-child(3) { animation-delay: 0.3s; }
+.fade-in-row:nth-child(4) { animation-delay: 0.4s; }
+.fade-in-row:nth-child(5) { animation-delay: 0.5s; }
